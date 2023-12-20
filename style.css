@@ -1,0 +1,160 @@
+* {
+	margin    : 0;
+	padding   : 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size              : clamp(40%, 1% + 2vw, 62.5%);
+	--hue                  : 240;
+	--bg-color             : hsl(var(--hue), 6%, 21%);
+	--text-color           : hsl(var(--hue), 0%, 100%);
+	--button-bg            : hsl(var(--hue), 9%, 89%);
+	--button-secondary-bg  : #02789c;
+	--button-secondary-text: #FFF;
+}
+
+html.light {
+	--bg-color  : hsl(var(--hue), 0%, 100%);
+	--text-color: hsl(var(--hue), 6%, 21%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+	display: none;
+}
+
+body {
+	background-color       : var(--bg-color);
+	color                  : var(--text-color);
+	display                : grid;
+	height                 : 100vh;
+	place-content          : center;
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+button,
+span {
+	line-height   : 2rem;
+	text-align    : center;
+	font-family   : Roboto;
+	font-size     : 12.6rem;
+	font-style    : normal;
+	font-weight   : 500;
+	line-height   : normal;
+	text-transform: uppercase;
+}
+
+#app {
+	display        : flex;
+	justify-content: space-between;
+	align-items    : center;
+	gap            : 19.2rem;
+}
+
+.timerContainer {
+	display       : flex;
+	flex-direction: column;
+	justify-items : center;
+	align-items   : center;
+}
+
+#toggle-mode {
+	position   : absolute;
+	top        : 3.2rem;
+	right      : 3.2rem;
+	font-size  : 3.2rem;
+	line-height: 0;
+	margin     : 0;
+	color      : var(--text-color);
+}
+
+.sr-only {
+	width             : 1px;
+	height            : 1px;
+	position          : absolute;
+	overflow          : hidden;
+	margin            : -1px;
+	padding           : 0;
+	border            : 0;
+	appearance        : none;
+	-webkit-appearance: none;
+	-moz-appearance   : none;
+}
+
+.flex {
+	display: flex;
+}
+
+#timer {
+	height: 117px;
+}
+
+#controls {
+	margin-top   : 1.7rem;
+	padding      : 2.2rem 4rem;
+	gap          : 1.6rem;
+	border-radius: 99999rem;
+}
+
+html.light #controls {
+	--text-color: hsl(var(--hue), 6%, 21%);
+}
+
+#controls button,
+.timerContainer button {
+	background-color: transparent;
+	border          : 0;
+	color           : var(--primary-color);
+	cursor          : pointer;
+	font-size       : 6.4rem;
+}
+
+.buttonsContainer,
+.group1,
+.group2 {
+	display: flex;
+	gap    : 3.2rem;
+
+}
+
+.buttonsContainer {
+	flex-direction: column;
+}
+
+.buttonsContainer button {
+	width           : 13.8rem;
+	height          : 15.2rem;
+	border          : none;
+	border-radius   : 2.4rem;
+	/* background   : var(--button-bg); */
+	cursor          : pointer;
+}
+
+.buttonsContainer button:hover,
+#controls button:hover,
+.timerContainer button:hover {
+	filter: brightness(.875);
+}
+
+.buttonsContainer .secondary svg path {
+	fill: var(--button-secondary-bg);
+}
+
+.buttonsContainer .secondary svg path+path {
+	fill: var(--button-secondary-text);
+}
+
+/* CONTROLS */
+
+/* .running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high {
+	display: none;
+} */
